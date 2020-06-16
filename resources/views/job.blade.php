@@ -37,8 +37,8 @@
         </div>
     </div>
     <div class="lg:mr-10 max-w-2xl">
-        <p class="pb-2 lg:mb-8 font-semibold text-2xl lg:text-center lg:border-b">
-            {{ $job->title }}
+        <p class="pb-2 mb-2 lg:mb-8 font-semibold text-3xl lg:text-center lg:border-b">
+            {{ $job->company_name }}
         </p>
         <p class="text-sm leading-relaxed">{{ $job->discription }}</p>
     </div>
