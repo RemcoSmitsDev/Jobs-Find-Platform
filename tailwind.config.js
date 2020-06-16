@@ -24,7 +24,8 @@ module.exports = {
         space: ["responsive", "hover", "focus"],
         textColor: ["responsive", "hover", "focus", "active", "group-hover"],
         wordBreak: ["responsive", "hover", "focus"],
-        borderWidth: ["responsive", "hover", "focus"]
+        borderWidth: ["responsive", "hover", "focus"],
+        space: ["responsive", "hover", "focus"]
     },
     plugins: []
 };
