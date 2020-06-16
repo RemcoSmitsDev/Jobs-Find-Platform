@@ -10,7 +10,8 @@
                 alt="">
         </div>
         <div class="flex-1 overflow-hidden">
-            <p class="mb-1 font-semibold truncate">{{ $job->title }} by {{ $job->company_name }}</p>
+            <p class="mb-1 font-semibold truncate">{{ $job->title }} <span class="text-sm">by
+                    {{ $job->company_name }}</span></p>
             <p class="text-sm leading-relaxed lg:break-words truncate">{{ $disc }}</p>
             <div class="space-x-2 flex text-sm">
                 <p>Salary: {{ $job->salary }}</p>
