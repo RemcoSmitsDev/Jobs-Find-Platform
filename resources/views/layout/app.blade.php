@@ -28,7 +28,19 @@
                 </div>
             </div>
         </div>
-
+        <div class="block lg:hidden fixed bottom-0 left-0 w-full bg-black">
+            <div class="px-6 py-6 w-full flex items-center justify-between text-white font-semibold">
+                <div>
+                    <a href="{{ route('AllJobs') }}">Home</a>
+                </div>
+                <div>
+                    <a href="{{ route('AllJobs') }}">Profile</a>
+                </div>
+                <div>
+                    <a href="{{ route('AllJobs') }}">Mij applies</a>
+                </div>
+            </div>
+        </div>
         @if(!empty($errorMessage))
         <script>
         setTimeout(function() {
