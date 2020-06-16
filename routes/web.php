@@ -1,6 +1,8 @@
 <?php
 
+use App\Job;
 use Illuminate\Support\Facades\Route;
+use Symfony\Component\Console\Input\Input;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,3 +18,4 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', 'JobsController@index')->name('AllJobs');
 Route::get('/job/{id}', 'JobsController@jobPage')->name('JobPage');
 Route::get('/apply/{id}', 'JobsController@apply')->name('applyforjob');
+Route::any('/search', 'JobsController@search');
