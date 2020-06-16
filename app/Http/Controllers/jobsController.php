@@ -35,7 +35,7 @@ class jobsController extends Controller
         } else {
             $Alljobs = Job::all();
             $disc = Str::of($Alljobs->pluck('discription')->implode('[" "]'))->limit(130);
-            return view('welcome', compact('Alljobs', 'disc'))->withMessage('No Details found. Try to search again !');
+            return view('welcome', compact('Alljobs', 'disc'))->with('errorMessage', "We couldn't find a job....");
         }
     }
 }
