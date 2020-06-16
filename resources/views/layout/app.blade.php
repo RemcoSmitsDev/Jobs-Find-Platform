@@ -4,9 +4,11 @@
         <title>App Name - Jobportal</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
         <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+        <script src="https://code.jquery.com/jquery-3.5.1.min.js"
+            integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
     </head>
 
-    <body>
+    <body class="relative">
         <div class="fixed top-0 left-0 w-full bg-black">
             <div class="px-6 pt-4 -mt-px w-full flex items-center">
                 <div class="hidden text-white">
@@ -28,7 +30,12 @@
         </div>
 
         @if(!empty($errorMessage))
-        <div class="fixed bottom-0 right-0 w-full max-w-md bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative"
+        <script>
+        setTimeout(function() {
+            $('#fade-message').fadeOut();
+        }, 3000);
+        </script>
+        <div class="md:mb-10 md:mr-10 fixed bottom-0 right-0 w-full max-w-md bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded"
             role="alert" id="fade-message">
             <strong class="font-bold">Holy smokes!</strong>
             <span class="block sm:inline">{{ $errorMessage }}</span>
@@ -45,13 +52,6 @@
         <div class="mt-24 mb-20">
             @yield('content')
         </div>
-        <script>
-        $(function() {
-            setTimeout(function() {
-                $('.fade-message').slideUp();
-            }, 5000);
-        });
-        </script>
     </body>
 
 </html>
