@@ -3,19 +3,24 @@
 
 <div class="space-y-4 container mx-auto max-w-screen-sm flex flex-col justify-center">
     @foreach($Alljobs as $job)
-    <a href="/job/{{ $job->id }}" class="px-4 py-2 h-32 w-full flex items-center md:rounded-lg shadow overflow-x-auto">
+    <a href="/job/{{ $job->id }}" class="px-4 py-6 lg:h-32 flex items-center md:rounded-lg shadow">
         <div class="mr-6 md:mr-10 h-12 w-12 lg:h-24 lg:w-24 rounded-full overflow-hidden shadow flex-shrink-0">
             <img class="h-full w-auto"
-                src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/Square_-_black_simple.svg/500px-Square_-_black_simple.svg.png"
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Vue.js_Logo_2.svg/1200px-Vue.js_Logo_2.svg.png"
                 alt="">
         </div>
-        <div class="flex-1 overflow-hidden">
-            <p class="mb-1 font-semibold truncate">{{ $job->title }} <span class="text-sm">by
-                    {{ $job->company_name }}</span></p>
-            <p class="text-sm leading-relaxed lg:break-words truncate">{{ $disc }}</p>
-            <div class="space-x-2 flex text-sm">
-                <p>Salary: {{ $job->salary }}</p>
-                <p>Hours: {{ $job->hours }}</p>
+        <div class="flex-1 -my-4 space-y-2 flex flex-col justify-between overflow-hidden">
+            <div>
+                <p class="mb-1 lg:text-lg font-semibold truncate">{{ $job->title }}</p>
+                <p class="text-sm leading-relaxed lg:break-words truncate">{{ $job->discription }}</p>
+            </div>
+            <div class="flex justify-between text-sm">
+                <div class="lg:space-x-2 flex">
+                    <p class="hidden lg:block">Salary: {{ $job->salary }}</p>
+                    <p class="lg:mr-0 mr-2">Hours: {{ $job->hours }}</p>
+                    <span class="text-sm font-semibold">by {{ $job->company_name }}</span>
+                </div>
+                <p class="lg:mr-0 mr-2">Posted: {{ $job->created_at->diffForHumans() }}</p>
             </div>
         </div>
 
