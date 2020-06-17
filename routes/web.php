@@ -1,6 +1,7 @@
 <?php
 
 use App\Job;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use Symfony\Component\Console\Input\Input;
 
@@ -23,3 +24,7 @@ Route::get('/job/{id}', 'JobsController@jobPage')->name('jobPage');
 
 
 Route::get('/apply/{id}', 'JobsController@apply')->name('applyforjob');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
