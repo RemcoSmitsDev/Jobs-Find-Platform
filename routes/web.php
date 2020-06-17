@@ -16,6 +16,10 @@ use Symfony\Component\Console\Input\Input;
 */
 
 Route::get('/', 'JobsController@index')->name('AllJobs');
-Route::get('/job/{id}', 'JobsController@jobPage')->name('jobPage');
-Route::get('/apply/{id}', 'JobsController@apply')->name('applyforjob');
 Route::any('/search', 'JobsController@search')->name('searchJob');
+Route::post('/job', 'JobsController@store')->name('storenewjob');
+Route::get('/job/create', 'JobsController@create')->name('createjob');
+Route::get('/job/{id}', 'JobsController@jobPage')->name('jobPage');
+
+
+Route::get('/apply/{id}', 'JobsController@apply')->name('applyforjob');
