@@ -34,7 +34,7 @@
                         </span>
                     </form>
                     <div class="hidden lg:block px-6">
-                        <a class="text-2xl text-white" href="{{ route('AllJobs') }}">Profile</a>
+                        <a class="text-2xl text-white" href="/user/{{ Auth::user()->id }}">Profile</a>
                     </div>
                 </div>
             </div>

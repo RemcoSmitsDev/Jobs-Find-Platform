@@ -16,6 +16,8 @@ use Symfony\Component\Console\Input\Input;
 |
 */
 
+
+
 Route::get('/', 'JobsController@index')->name('AllJobs');
 Route::any('/search', 'JobsController@search')->name('searchJob');
 Route::post('/job', 'JobsController@store')->name('storenewjob');
@@ -27,4 +29,4 @@ Route::get('/apply/{id}', 'JobsController@apply')->name('applyforjob');
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/user/{user}', 'ProfileController@index')->name('profile');
