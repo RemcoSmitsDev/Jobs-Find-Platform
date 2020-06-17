@@ -41,10 +41,6 @@ class User extends Authenticatable
     {
         return $this->hasOne(Profile::class);
     }
-    public function jobs()
-    {
-        return $this->hasMany(Jobs::class)->orderBy('created_at', 'DESC');
-    }
 
     public function projects()
     {
