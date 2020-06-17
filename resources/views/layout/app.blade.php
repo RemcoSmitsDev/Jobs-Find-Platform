@@ -1,4 +1,5 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 
     <head>
         <title>App Name - Jobportal</title>
@@ -10,21 +11,31 @@
 
     <body class="relative">
         <div class="fixed top-0 left-0 w-full bg-black">
-            <div class="px-6 pt-4 -mt-px w-full flex items-center">
-                <div class="hidden text-white">
-                    <a href="{{ route('AllJobs') }}">Mij applies</a>
-                </div>
-                <div class="mx-auto">
-                    <form class="flex items-center" action="/search" method="post">
+            <div class="px-4 py-4 -mt-px w-full flex items-center">
+                <div class="max-w-screen-lg mx-auto flex-1 flex items-center justify-center lg:justify-between">
+                    <div class="hidden lg:block px-6">
+                        <a class="text-2xl text-white" href="{{ route('AllJobs') }}">Job Portal</a>
+                    </div>
+                    <form class="inline-flex items-center" action="/search" method="post">
                         {{ csrf_field() }}
-                        <input class="w-64 max-w-md px-4 py-2 rounded-l" type="search" name="q"
-                            placeholder="html, css, front-end, backend">
-                        <button class="px-4 py-2 bg-indigo-400 text-white font-semibold rounded-r"
-                            type="submit">Search</button>
+                        <span class="relative mr-40 min-w-full md:max-w-lg focus:outline-none text-gray-600">
+                            <span class="absolute inset-y-0 left-0 pl-3 py-2">
+                                <button type="submit">
+                                    <svg class="h-6 w-6 fill-current" viewBox="0 0 24 24">
+                                        <path class="heroicon-ui"
+                                            d="M16.32 14.9l5.39 5.4a1 1 0 0 1-1.42 1.4l-5.38-5.38a8 8 0 1 1 1.41-1.41zM10 16a6 6 0 1 0 0-12 6 6 0 0 0 0 12z">
+                                        </path>
+                                    </svg>
+                                </button>
+                            </span>
+                            <input
+                                class="block border-2 border-gray-300 bg-white font-semibold leading-5 py-2 w-full rounded-lg pl-12 pr-5 text-md"
+                                type="search" autocomplete="off" name="q" placeholder="Zoek naar een baan">
+                        </span>
                     </form>
-                </div>
-                <div class="hidden text-white">
-                    <a href="{{ route('AllJobs') }}">Mij applies</a>
+                    <div class="hidden lg:block px-6">
+                        <a class="text-2xl text-white" href="{{ route('AllJobs') }}">Profile</a>
+                    </div>
                 </div>
             </div>
         </div>
