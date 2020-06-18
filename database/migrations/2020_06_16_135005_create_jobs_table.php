@@ -18,7 +18,7 @@ class CreateJobsTable extends Migration
             $table->bigIncrements('id');
             $table->string('title');
             $table->string('hours');
-            $table->string('salary');
+            $table->string('salary')->nullable();
             $table->longtext('discription');
             $table->string('company_name');
             $table->timestamp('created_at')->useCurrent();
