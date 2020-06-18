@@ -11,16 +11,19 @@
         </div>
         <div class="flex-1 -my-4 space-y-2 flex flex-col justify-between overflow-hidden">
             <div>
-                <p class="mb-1 lg:text-lg font-semibold truncate">{{ $job->title }}</p>
+                <div class="flex items-center justify-between truncate">
+                    <p class="mb-1 lg:text-lg font-semibold">{{ $job->title }}</p>
+                    <p class="hidden lg:block text-sm lg:mr-0 mr-2">{{ $job->created_at->diffForHumans() }}</p>
+                </div>
                 <p class="text-sm leading-relaxed lg:break-words truncate">{{ $job->discription }}</p>
             </div>
             <div class="flex justify-between text-sm">
                 <div class="lg:space-x-2 flex">
                     <p class="hidden lg:block">Salary: {{ $job->salary }}</p>
-                    <p class="lg:mr-0 mr-2">Hours: {{ $job->hours }}</p>
-                    <span class="text-sm font-semibold">by {{ $job->company_name }}</span>
+                    <p class="hidden lg:block lg:mr-0 mr-2">Hours: {{ $job->hours }}</p>
+                    <span class="text-sm mr-2 font-semibold">by {{ $job->company_name }}</span>
+                    <p class="block lg:hidden text-sm lg:mr-0 mr-2">{{ $job->created_at->diffForHumans() }}</p>
                 </div>
-                <p class="lg:mr-0 mr-2">Posted: {{ $job->created_at->diffForHumans() }}</p>
             </div>
         </div>
 

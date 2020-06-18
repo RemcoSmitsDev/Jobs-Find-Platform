@@ -11,7 +11,7 @@
 
     <body class="relative">
         <div class="fixed top-0 left-0 w-full bg-black">
-            <div class="px-4 py-4 -mt-px w-full flex items-center">
+            <div class="px-6 py-4 -mt-px w-full flex items-center">
                 <div class="max-w-screen-lg mx-auto flex-1 flex items-center justify-center lg:justify-between">
                     <div class="hidden lg:block px-6">
                         <a class="text-2xl text-white" href="{{ route('AllJobs') }}">Job Portal</a>
@@ -33,9 +33,18 @@
                                 type="search" autocomplete="off" name="q" placeholder="Zoek naar een baan">
                         </span>
                     </form>
+                    @guest
+                    <div class="hidden lg:block px-6">
+                        <a class="text-2xl text-white" href="{{ route('login') }}">Login</a>
+                    </div>
+                    <div class="hidden lg:block px-6">
+                        <a class="text-2xl text-white" href="{{ route('register') }}">Registreer</a>
+                    </div>
+                    @else
                     <div class="hidden lg:block px-6">
                         <a class="text-2xl text-white" href="/user/{{ Auth::user()->id }}">Profile</a>
                     </div>
+                    @endif
                 </div>
             </div>
         </div>
