@@ -16,17 +16,23 @@ use Symfony\Component\Console\Input\Input;
 |
 */
 
+Auth::routes();
 
 
 Route::get('/', 'JobsController@index')->name('AllJobs');
 Route::any('/search', 'JobsController@search')->name('searchJob');
 Route::post('/job', 'JobsController@store')->name('storenewjob');
-Route::get('/job/create', 'JobsController@create')->name('createjob');
+Route::group(['middleware' => ['auth']], function () {
+    Route::get('/job/create', 'JobsController@create')->name('createjob');
+});
+
 Route::get('/job/{id}', 'JobsController@jobPage')->name('jobPage');
 
 
-Route::get('/apply/{id}', 'JobsController@apply')->name('applyforjob');
+Route::group(['middleware' => ['auth']], function () {
+    Route::get('/apply/{id}', 'JobsController@apply')->name('applyforjob');
+});
 
-Auth::routes();
+
 
 Route::get('/user/{user}', 'ProfileController@index')->name('profile');
