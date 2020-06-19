@@ -31,14 +31,22 @@ class jobsController extends Controller
 
     public function store(request $request)
     {
-        // dd($request);
-        Job::insert([
-            'discription' => $request['discription'],
-            'company_name' => $request['company_name'],
-            'hours' => $request['hours'],
-            'title' => $request['title'],
-            'salary' => $request['salary']
+        $data = $request->validate([
+            'description' => 'required',
+            'image' => '',
+            'company_name' => 'required',
+            'hours' => 'required',
+            'title' => 'required',
+            'salary' => ''
         ]);
+        // Job::insert([
+        //     'description' => $request['description'],
+        //     'company_name' => $request['company_name'],
+        //     'hours' => $request['hours'],
+        //     'title' => $request['title'],
+        //     'salary' => $request['salary']
+        // ]);
+        Job::insert($data);
         return redirect('/');
     }
 
