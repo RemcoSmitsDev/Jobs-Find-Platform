@@ -11,11 +11,6 @@ class Profile extends Model
     ];
 
 
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
-
     public function user()
     {
         return $this->belongsTo(User::class);
