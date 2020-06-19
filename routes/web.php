@@ -21,9 +21,9 @@ Auth::routes();
 
 Route::get('/', 'JobsController@index')->name('AllJobs');
 Route::any('/search', 'JobsController@search')->name('searchJob');
-Route::post('/job', 'JobsController@store')->name('storenewjob');
 Route::group(['middleware' => ['auth']], function () {
     Route::get('/job/create', 'JobsController@create')->name('createjob');
+    Route::post('/job', 'JobsController@store')->name('storenewjob');
 });
 
 Route::get('/job/{id}', 'JobsController@jobPage')->name('jobPage');
