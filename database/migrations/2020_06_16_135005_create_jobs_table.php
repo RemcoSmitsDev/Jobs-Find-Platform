@@ -19,7 +19,7 @@ class CreateJobsTable extends Migration
             $table->string('title');
             $table->string('hours');
             $table->string('salary')->nullable();
-            $table->longtext('discription');
+            $table->longtext('description');
             $table->string('company_name');
             $table->timestamp('created_at')->useCurrent();
         });
