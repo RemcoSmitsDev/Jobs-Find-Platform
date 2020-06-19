@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use Carbon\Carbon;
 use App\Job;
+use App\User;
+use Carbon\Carbon;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 
