@@ -36,7 +36,15 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
-
+    public static function boot()
+    {
+        parent::boot();
+        static::created(function ($user) {
+            $user->profile()->create([
+                'image' => 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/1024px-No_image_available.svg.png',
+            ]);
+        });
+    }
     public function profile()
     {
         return $this->hasOne(Profile::class);
@@ -45,5 +53,15 @@ class User extends Authenticatable
     public function project()
     {
         return $this->hasMany(Project::class);
+    }
+
+    public function job()
+    {
+        return $this->hasMany(Job::class);
+    }
+
+    public function school()
+    {
+        return $this->hasMany(School::class);
     }
 }
