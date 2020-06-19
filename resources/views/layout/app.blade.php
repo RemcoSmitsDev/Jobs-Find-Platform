@@ -18,7 +18,7 @@
             <div class="px-4 py-4 -mt-px w-full flex items-center">
                 <div class="max-w-screen-lg mx-auto flex-1 flex items-center justify-center lg:justify-between">
                     <div class="hidden lg:block px-4">
-                        <a class="text-2xl text-white" href="{{ route('AllJobs') }}">Job Portal</a>
+                        <a class="text-2xl text-white" href="{{ route('AllVacature') }}">Job Portal</a>
                     </div>
                     <form class="inline-flex items-center" action="/search" method="post">
                         {{ csrf_field() }}
@@ -55,13 +55,13 @@
         <div class="block lg:hidden fixed bottom-0 left-0 w-full bg-black z-20">
             <div class="px-6 py-6 w-full flex items-center justify-between text-white font-semibold">
                 <div>
-                    <a href="{{ route('AllJobs') }}">Home</a>
+                    <a href="{{ route('AllVacature') }}">Home</a>
                 </div>
                 <div>
-                    <a href="{{ route('AllJobs') }}">Profile</a>
+                    <a href="{{ route('AllVacature') }}">Profile</a>
                 </div>
                 <div>
-                    <a href="{{ route('AllJobs') }}">Mij applies</a>
+                    <a href="{{ route('AllVacature') }}">Mij applies</a>
                 </div>
             </div>
         </div>
