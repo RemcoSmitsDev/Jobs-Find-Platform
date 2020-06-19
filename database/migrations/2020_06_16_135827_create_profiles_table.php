@@ -17,8 +17,8 @@ class CreateProfilesTable extends Migration
             $table->bigIncrements('id');
             $table->unsignedBigInteger('user_id');
             $table->string('image');
-            $table->string('curren_job');
-            $table->string('current_school');
+            $table->string('current_job')->nullable();
+            $table->string('current_school')->nullable();
             $table->timestamp('created_at')->useCurrent();
             $table->timestamp('updated_at')->useCurrent();
         });
