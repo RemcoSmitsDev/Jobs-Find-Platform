@@ -8,9 +8,9 @@
         <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
         <title>RS webdevelopment - Homepage</title>
-        <link rel="stylesheet" type="text/css" href="{{ asset('css/app.css') }}">
         <script src="https://code.jquery.com/jquery-3.5.1.min.js"
             integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+        <link rel="stylesheet" type="text/css" href="{{ asset('css/app.css') }}">
     </head>
 
     <body class="relative">
@@ -57,12 +57,21 @@
                 <div>
                     <a href="{{ route('AllVacature') }}">Home</a>
                 </div>
+                @guest
                 <div>
-                    <a href="{{ route('AllVacature') }}">Profile</a>
+                    <a href="{{ route('login') }}">Login</a>
+                </div>
+                <div>
+                    <a href="{{ route('register') }}">Registreer</a>
+                </div>
+                @else
+                <div>
+                    <a href="/user/{{ Auth::user()->id }}">Profile</a>
                 </div>
                 <div>
                     <a href="{{ route('AllVacature') }}">Mij applies</a>
                 </div>
+                @endif
             </div>
         </div>
         @if(!empty($errorMessage))
@@ -88,6 +97,10 @@
         <div class="mt-24 mb-20">
             @yield('content')
         </div>
+        </li>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+            integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
+        </script>
     </body>
 
 </html>

@@ -11,11 +11,12 @@
         </div>
         <div class="flex-1 -my-4 space-y-2 flex flex-col justify-between overflow-hidden">
             <div>
-                <div class="flex items-center justify-between truncate">
-                    <p class="mb-1 lg:text-lg font-semibold">{{ $vacature->title }}</p>
+                <div class="flex space-x-10 items-center justify-between truncate">
+                    <p class="mb-1 lg:text-lg font-semibold truncate">{{ $vacature->title }}</p>
                     <p class="hidden lg:block text-sm lg:mr-0 mr-2">{{ $vacature->created_at->diffForHumans() }}</p>
                 </div>
-                <p class="text-sm leading-relaxed lg:break-words truncate">{{ $vacature->description }}</p>
+                <p class="text-sm leading-relaxed lg:break-words truncate">
+                    {{ $vacature->description }}</p>
             </div>
             <div class="flex justify-between text-sm">
                 <div class="lg:space-x-2 flex">
