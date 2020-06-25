@@ -2,6 +2,8 @@
 
 namespace App;
 
+use App\User;
+use App\School;
 use Illuminate\Database\Eloquent\Model;
 
 class Profile extends Model

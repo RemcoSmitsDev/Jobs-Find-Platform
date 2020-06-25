@@ -52,7 +52,7 @@ class User extends Authenticatable
 
     public function project()
     {
-        return $this->hasMany(Project::class);
+        return $this->hasMany(Project::class)->orderBy('created_at', 'DESC');
     }
 
     public function job()
@@ -62,6 +62,6 @@ class User extends Authenticatable
 
     public function school()
     {
-        return $this->hasMany(School::class);
+        return $this->hasMany(School::class)->orderBy('ended_at', 'DESC');
     }
 }
