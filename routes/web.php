@@ -38,6 +38,10 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/school/create', 'SchoolController@create')->name('addSchool');
     Route::post('/school', 'SchoolController@store')->name('storenewSchool');
 });
+Route::group(['middleware' => ['auth']], function () {
+    Route::get('/project/create', 'ProjectController@create')->name('addProject');
+    Route::post('/project', 'ProjectController@store')->name('storenewProject');
+});
 
 
 Route::get('/user/{user}', 'ProfileController@index')->name('profile');
