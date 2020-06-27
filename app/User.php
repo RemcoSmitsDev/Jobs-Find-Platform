@@ -62,6 +62,6 @@ class User extends Authenticatable
 
     public function school()
     {
-        return $this->hasMany(School::class)->orderBy('ended_at', 'DESC');
+        return $this->hasMany(School::class)->orderBy('created_at', 'DESC');
     }
 }
