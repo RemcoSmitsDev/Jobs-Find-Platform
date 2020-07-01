@@ -17,11 +17,13 @@ class CreateJobsTable extends Migration
         Schema::create('jobs', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('title');
-            $table->string('hours');
-            $table->string('salary')->nullable();
-            $table->longtext('description');
+            $table->string('function');
             $table->string('company_name');
+            $table->unsignedBigInteger('user_id');
+            $table->date('started_at');
+            $table->date('ended_at')->default('heden');
             $table->timestamp('created_at')->useCurrent();
+            $table->timestamp('updated_at')->useCurrent();
         });
     }
 

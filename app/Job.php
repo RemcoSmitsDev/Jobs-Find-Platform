@@ -7,9 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Job extends Model
 {
 
-    protected $fillable = [
-        'title', 'hours', 'salary', 'description', 'company_name', 'created_at'
-    ];
+    protected $guarded = [];
 
     public function user()
     {

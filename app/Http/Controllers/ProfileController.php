@@ -11,6 +11,8 @@ class ProfileController extends Controller
 {
     public function index(User $user)
     {
-        return view('profiles.profile', compact('user'));
+        $currentSchool = $user->school->where('ended_at', 'heden')->first();
+        $currentJob = $user->job->where('ended_at', 'heden')->first();
+        return view('profiles.profile', compact('user', 'currentSchool', 'currentJob'));
     }
 }

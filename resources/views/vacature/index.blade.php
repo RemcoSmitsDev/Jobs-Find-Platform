@@ -45,7 +45,7 @@
         <p class="pb-2 mb-2 lg:mb-8 font-semibold text-3xl lg:text-center lg:border-b">
             {{ $vacature->company_name }}
         </p>
-        <pre class="text-sm leading-relaxed whitespace-pre-wrap">{{ $vacature->description }}</pre>
+        <article class="text-sm leading-relaxed whitespace-pre-wrap">{{ $vacature->description }}</article>
     </div>
 
 </div>

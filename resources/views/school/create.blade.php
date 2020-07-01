@@ -8,7 +8,8 @@
         @csrf
         <div class="space-y-1 flex flex-col">
             <label class="font-semibold" for="opleiding">Title</label>
-            <input id="opleiding" class="px-4 py-2 border rounded" type="text" name="opleiding" placeholder="Opleiding">
+            <input id="opleiding" class="px-4 py-2 border rounded" type="text" name="opleiding"
+                placeholder="Opleiding / Cursus naam">
             @error('opleiding')
             <span class="invalid-feedback" role="alert">
                 <strong>{{ $message }}</strong>
@@ -47,9 +48,9 @@
             <label class="font-semibold" for="ended_at">Ended At (Check the button if you
                 didn't ended
                 your school yet)
-                <input type="checkbox" value="heden" id="ended_at" name="ended_at"></label>
-
+            </label>
             <input id="ended_at" class="px-4 py-2 border rounded" type="date" name="ended_at">
+            <input type="checkbox" value="heden" id="ended_at" name="ended_at" />
             @error('ended_at')
             <span class="invalid-feedback" role="alert">
                 <strong>{{ $message }}</strong>
