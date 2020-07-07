@@ -15,17 +15,86 @@ module.exports = {
             "hover",
             "focus",
             "active",
-            "group-hover"
+            "group-hover",
+            "group-focus",
+            "focus-within"
         ],
-        opacity: ["responsive", "hover", "focus", "disabled"],
-        zIndex: ["responsive", "hover", "focus"],
-        borderWidth: ["responsive", "first", "hover", "focus", "group-hover"],
-        width: ["responsive", "first", "hover", "focus"],
-        space: ["responsive", "hover", "focus"],
-        textColor: ["responsive", "hover", "focus", "active", "group-hover"],
-        wordBreak: ["responsive", "hover", "focus"],
-        borderWidth: ["responsive", "hover", "focus"],
-        space: ["responsive", "hover", "focus"]
+        opacity: [
+            "responsive",
+            "hover",
+            "focus",
+            "disabled",
+            "group-hover",
+            "group-focus",
+            "focus-within"
+        ],
+        zIndex: [
+            "responsive",
+            "hover",
+            "focus",
+            "group-hover",
+            "group-focus",
+            "focus-within"
+        ],
+        borderWidth: [
+            "responsive",
+            "first",
+            "hover",
+            "focus",
+            "group-hover",
+            "group-focus",
+            "focus-within"
+        ],
+        width: [
+            "responsive",
+            "first",
+            "hover",
+            "focus",
+            "group-hover",
+            "group-focus",
+            "focus-within"
+        ],
+        space: [
+            "responsive",
+            "hover",
+            "focus",
+            "group-hover",
+            "group-focus",
+            "focus-within"
+        ],
+        textColor: [
+            "responsive",
+            "hover",
+            "focus",
+            "active",
+            "group-hover",
+            "group-focus",
+            "focus-within"
+        ],
+        wordBreak: [
+            "responsive",
+            "hover",
+            "focus",
+            "group-hover",
+            "group-focus",
+            "focus-within"
+        ],
+        borderWidth: [
+            "responsive",
+            "hover",
+            "focus",
+            "group-hover",
+            "group-focus",
+            "focus-within"
+        ],
+        space: [
+            "responsive",
+            "hover",
+            "focus",
+            "group-hover",
+            "group-focus",
+            "focus-within"
+        ]
     },
     plugins: []
 };

@@ -5,10 +5,8 @@
     <div class="py-2 -mt-px fixed space-x-10 max-w-screen-lg w-full bg-white z-10">
         <div class="border-b space-x-2 py-2 w-full flex items-center">
             <div class="space-x-2 flex items-center">
-                <img class="h-10 w-10 rounded-full"
-                    src="{{ $user->image ? $user->image : 'https://www.pedicurepraktijkpapendrecht.nl/webshop/images/remco.JPG' }}"
-                    alt="{{ $user->name }}">
-                <span class="text-lg font-semibold">{{ $user->name }}</span>
+                <img class="h-10 w-10 rounded-full" src="{{ $user->profileImage() }}" alt="{{ $user->name }}">
+                <a href="" class="text-lg font-semibold">{{ $user->name }}</a>
             </div>
             <a href="#projects" class="text-sm font-semibold">
                 Projects: {{ $user->project->count() }}
@@ -18,7 +16,7 @@
     <div class="mt-10 pt-24 relative">
         <div class="max-w-xl">
             <div class="mb-2">
-                <h1 class="font-semibold text-2xl">Persoonlijke informatie</h1>
+                <h1 id="persoonlijke informatie" class="font-semibold text-2xl">Persoonlijke informatie</h1>
             </div>
             <div class="grid grid-cols-2">
 
@@ -137,7 +135,7 @@
             </div>
             <div class="w-full md:max-w-lg">
                 <div class="space-x-1 flex items-center">
-                    <h1 class="font-bold text-lg">Projecten</h1>
+                    <h1 id="projects" class="font-bold text-lg">Projecten</h1>
                     @auth
                     @if(Auth::user()->id == $user->id)
                     <a href="{{ route('addProject') }}" class="-mb-1 h-4 w-4">
@@ -151,7 +149,7 @@
                     @endauth
                 </div>
 
-                <div id="projects" class="py-4 space-x-4 flex overflow-x-auto">
+                <div class="py-4 space-x-4 flex overflow-x-auto">
                     @foreach($user->project as $project)
                     <button type="button">
                         <div class="relative flex flex-shrink-0">

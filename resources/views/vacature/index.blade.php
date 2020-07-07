@@ -1,8 +1,8 @@
 @extends ('layout.app')
 @section ('content')
 
-<div class="px-6 container mx-auto max-w-screen-lg flex flex-wrap-reverse justify-center">
-    <div class="lg:mt-0 max-w-xs mt-12 lg:w-1/4 w-full lg:block flex">
+<div class="lg:px-0 px-6 lg:space-x-6 container mx-auto max-w-screen-lg flex flex-wrap-reverse justify-center">
+    <div class="lg:mt-0 lg:max-w-xs mt-12 lg:w-1/4 w-full">
         <div
             class="hidden lg:block ml-8 mb-4 h-12 w-12 lg:h-24 lg:w-24 rounded-full overflow-hidden shadow flex-shrink-0">
             <img class="h-24 w-auto"

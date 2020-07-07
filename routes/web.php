@@ -19,7 +19,8 @@ use Symfony\Component\Console\Input\Input;
 Auth::routes();
 
 
-Route::get('/', 'VacatureController@index')->name('AllVacature');
+Route::get('/', 'HomeController@index');
+Route::get('/vacatures', 'VacatureController@index')->name('AllVacature');
 Route::any('/search', 'VacatureController@search')->name('searchVacature');
 Route::group(['middleware' => ['auth']], function () {
     Route::get('/vacature/create', 'VacatureController@create')->name('createVacature');
@@ -41,7 +42,7 @@ Route::group(['middleware' => ['auth']], function () {
 
 Route::group(['middleware' => ['auth']], function () {
     Route::get('/job/create', 'JobController@create')->name('addJob');
-    Route::post('/job', 'JobController@store')->name('storenewJob');
+    Route::post('/job', 'JobController@store')->name('storenewJob]');
 });
 Route::group(['middleware' => ['auth']], function () {
     Route::get('/project/create', 'ProjectController@create')->name('addProject');

@@ -15,6 +15,7 @@ class CreateVacaturesTable extends Migration
     {
         Schema::create('vacatures', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string('image');
             $table->string('title');
             $table->string('hours');
             $table->string('salary')->nullable();

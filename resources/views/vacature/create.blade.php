@@ -7,13 +7,14 @@
         enctype="multipart/form-data">
         @csrf
         <div class="space-y-1 flex flex-col">
-            <label class="font-semibold" for="image">Image</label>
-            <input id="image" class="px-4 py-2 border rounded" type="file" name="Image">
+            <label class="font-semibold" for="image">Image (company logo)</label>
+            <input id="image" class="px-4 py-2 border rounded" type="file" name="image" value="{{ old('image') }}"
+                required>
         </div>
         <div class="space-y-1 flex flex-col">
             <label class="font-semibold" for="title">Title</label>
             <input id="title" class="px-4 py-2 border rounded" type="text" name="title"
-                placeholder="php laravel programmer gezocht">
+                placeholder="php laravel programmer gezocht" value="{{ old('title') }}" required>
             @error('title')
             <span class="invalid-feedback" role="alert">
                 <strong>{{ $message }}</strong>
@@ -23,7 +24,7 @@
         <div class="space-y-1 flex flex-col">
             <label class="font-semibold" for="company_name">Company Name</label>
             <input id="company_name" class="px-4 py-2 border rounded" type="text" name="company_name"
-                placeholder="test company">
+                placeholder="test company" value="{{ old('company_name') }}" required>
             @error('company_name')
             <span class="invalid-feedback" role="alert">
                 <strong>{{ $message }}</strong>
@@ -33,7 +34,7 @@
         <div class="space-y-1 flex flex-col">
             <label class="font-semibold" for="website">Company Website</label>
             <input id="website" class="px-4 py-2 border rounded" type="text" name="website"
-                placeholder="https://www.example.com">
+                placeholder="https://www.example.com" value="{{ old('website') }}" required>
             @error('website')
             <span class="invalid-feedback" role="alert">
                 <strong>{{ $message }}</strong>
@@ -51,7 +52,7 @@
         </div>
         <div class="space-y-1 flex flex-col">
             <label class="font-semibold" for="hours">Hours</label>
-            <input id="hours" class="px-4 py-2 border rounded" type="text" name="hours" placeholder="32">
+            <input id="hours" class="px-4 py-2 border rounded" type="text" name="hours" placeholder="32" required>
             @error('hours')
             <span class="invalid-feedback" role="alert">
                 <strong>{{ $message }}</strong>
@@ -60,8 +61,8 @@
         </div>
         <div class="space-y-1 flex flex-col">
             <label class="font-semibold" for="hours">Description</label>
-            <textarea class="px-4 py-2 border" name="description" cols="30" rows="10"
-                placeholder="Description"></textarea>
+            <textarea class="px-4 py-2 border" name="description" cols="30" rows="10" placeholder="Description"
+                required></textarea>
             @error('description')
             <span class="invalid-feedback" role="alert">
                 <strong>{{ $message }}</strong>

@@ -64,4 +64,13 @@ class User extends Authenticatable
     {
         return $this->hasMany(School::class)->orderBy('created_at', 'DESC');
     }
+    public function profileImage()
+    {
+        $imagePath = ($this->image) ? $this->image : 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/1024px-No_image_available.svg.png';
+        if ($imagePath == 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/1024px-No_image_available.svg.png') {
+            return $imagePath;
+        } else {
+            return '/storage/' . $imagePath;
+        }
+    }
 }
