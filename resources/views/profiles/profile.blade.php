@@ -1,7 +1,7 @@
 @extends('layout.app')
 
 @section('content')
-<div class="-mt-6 px-4 relative container max-w-screen-lg mx-auto">
+<div class="-mt-6 px-4 relative container max-w-screen-lg mx-auto overflow-hidden">
     <div class="py-2 -mt-px fixed space-x-10 max-w-screen-lg w-full bg-white z-10">
         <div class="border-b space-x-2 py-2 w-full flex items-center">
             <div class="space-x-2 flex items-center">

@@ -18,7 +18,10 @@
             <div class="px-4 py-4 -mt-px w-full flex items-center">
                 <div class="max-w-screen-lg mx-auto flex-1 flex items-center justify-center md:justify-between">
                     <div class="hidden lg:block px-4">
-                        <a class="text-2xl" href="{{ route('AllVacature') }}">Job Portal</a>
+                        <a class="text-2xl"
+                            href="{{ Request::is('vacatures') ?  route('index') : route('AllVacature') }}">Job
+                            Portal</a>
+
                     </div>
                     <form class="inline-flex items-center" action="/search" method="post">
                         {{ csrf_field() }}
