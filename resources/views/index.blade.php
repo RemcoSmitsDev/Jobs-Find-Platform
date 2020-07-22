@@ -17,16 +17,7 @@
         <div class="bg-indigo-400 text-white font-semibold">
             <div class="lg:px-0 px-4 container mx-auto max-w-screen-lg">
                 <div class="py-4 flex items-center justify-between">
-                    <div class="flex items-center">
-                        <h1 class="text-xl italic mr-8">Job Portal</h1>
-                        <div class="space-x-4 hidden justify-center items-center">
-                            <a class="text-sm hover:text-gray-400" href="">home</a>
-                            <a class="text-sm hover:text-gray-400" href="">home</a>
-                            <a class="text-sm hover:text-gray-400" href="">home</a>
-                            <a class="text-sm hover:text-gray-400" href="">home</a>
-                        </div>
-
-                    </div>
+                    <h1 class="text-xl italic mr-8">Job Portal</h1>
                     <div class="space-x-4 flex items-center">
                         @if(Auth()->check())
                         <a class="inline-block px-4 py-1 border border-white rounded"
@@ -45,7 +36,7 @@
                         <div
                             class="flex flex-no-wrap flex-shrink-0 justify-center -mt-10 pb-8 text-2xl md:text-3xl lg:text-4xl">
                             <h1>Your portfolio for</h1>
-                            <p class="pl-3 -ml-px text-gray-700" id="write"></p>
+                            <h1 class="pl-3 -ml-px text-gray-700" id="write"></h1>
                         </div>
                         <div class="mt-12 -mb-12 flex justify-center">
                             <img class="-mb-2 w-auto h-64" src="{{ url('/img/online_cv.svg') }}" alt="Portfolio image">

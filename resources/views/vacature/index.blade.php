@@ -5,9 +5,7 @@
     <div class="lg:mt-0 lg:max-w-xs mt-12 lg:w-1/4 w-full">
         <div
             class="hidden lg:block ml-8 mb-4 h-12 w-12 lg:h-24 lg:w-24 rounded-full overflow-hidden shadow flex-shrink-0">
-            <img class="h-24 w-auto"
-                src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/Square_-_black_simple.svg/500px-Square_-_black_simple.svg.png"
-                alt="">
+            <img class="h-24 w-auto" src="{{ $vacature->image() }}" alt="">
         </div>
         <div class="w-full space-y-2 flex-shrink-0">
             <p class="lg:mb-0 mb-8 pb-2 font-bold text-lg md:border-0 border-b md:text-left text-center">Extra

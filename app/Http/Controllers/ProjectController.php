@@ -23,7 +23,7 @@ class ProjectController extends Controller
         $request = request()->validate([
             'title' => 'required',
             'description' => 'required',
-            'url' => '',
+            'url' => 'required',
             'image' => 'required|image'
         ]);
         Auth::User()->project()->create([
